@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Introduction : TD1</title>
+  </head>
+  <body>
+    <div id="root">
+      <h1>{{reecrireMsg}}</h1>
+      <h2>Mon prenom est {{prenom}}</h2>
+      <input type="text" v-model="prenom" />
+      <p v-if="prenom.length>3">{{prenom}}</p>
+      <p v-else>Le prenom est trop court</p>
+      <hr />
+      <h2>Pays</h2>
+      <input type="text" id="inputPays" v-model="nouveauPays" />
+      <button @click="ajoutPays2" :disabled="nouveauPays.length < 3">
+        Ajout
+      </button>
+      <ul>
+        <li v-for="unPays in toUpperPays" :title="unPays" :class="couleur">
+          {{unPays}}
+        </li>
+      </ul>
+      <button @click="changeColor">Changer la couleur</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

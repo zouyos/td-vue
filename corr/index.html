@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction : TD1</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.cjs.js"></script> -->
+  </head>
+
+  <body>
+    <div id="root">
+      {{message}} {{ecrireMsg}}
+      <h1>Mon prenom est {{prenom}}</h1>
+      <div v-if="prenom.length>3" v-text="prenom"></div>
+      <div v-else>Le prenom est trop petit</div>
+      <input type="text" v-model="prenom" />
+      <input
+        v-model="nouveauPays"
+        @change="ajoutPays"
+        type="text"
+        id="inputPays"
+      />
+      <button :disabled="nouveauPays<=3" @click="ajoutPays2">
+        Ajouter un Pays
+      </button>
+      <button @click="changeCouleur">Change Couleur</button>
+      <ul>
+        <li :class="couleur" :title="'Le pays '+unPays" v-for="unPays in pays">
+          {{unPays}}
+        </li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
