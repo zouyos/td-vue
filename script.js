@@ -4,7 +4,7 @@ Vue.createApp({
       message: "!dlroW olleH",
       prenom: "Hamza",
       pays: ["Egypt", "France", "Argentine", "Inde"],
-      // pays2: this.toUpperPays,
+      // pays2: this.upperPays,
       couleur: "vert",
       nouveauPays: "",
     };
@@ -31,7 +31,7 @@ Vue.createApp({
     reecrireMsg() {
       return this.message.split("").reverse().join("");
     },
-    toUpperPays() {
+    upperPays() {
       return this.pays.map((item) => item.toUpperCase());
     },
   },
